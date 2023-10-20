@@ -1,5 +1,11 @@
-body {
+html {
+  padding: 0;
+  box-sizing: border-box;
 
+}
+
+body {
+  margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
@@ -31,6 +37,7 @@ body {
 .header-container  .header-item-container  .header-item-links {
   display: flex; 
   gap: 2rem;
+  text-align: center;
 }
 
 .header-container .header-item-container .header-logo {
@@ -81,12 +88,14 @@ flex-direction: column;
   width: 4rem;
   padding: 1rem 2rem;
   border-radius: .5rem;
-  cursor: pointer;
+  display: grid;
+  place-items: center;
   transition: background-color 0.3s;
 }
 
 .hero-left .sign-up:hover {
   background-color: #94b8f1;
+  cursor: pointer;
 }
 
 .hero-right {
@@ -166,29 +175,38 @@ justify-content: center;
   background-color: #3882F6;
   color: white;
   padding: 2rem 2rem;
-  border-radius: .25rem;
+  border-radius: .75rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  width: 60rem;
+  margin: 0 1rem;
+  width: 70rem;
 }
 
 .cta-container .cta .cta-title {
   font-size: 1.25rem;
   font-weight: 600;
+  padding: 1rem 0;
 }
 
 .cta-container .cta .sign-up {
   padding: .25rem 1rem;
+  height: 2rem;
   border: white 1px solid;
   width: 4rem;
-  border-radius: .5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: .75rem;
+  display: grid;
+  place-items: center;
+  transition: background-color .3s;
 }
 
-@media (min-width: 992px) {
+.cta-container .cta .sign-up:hover {
+background-color: #94b8f1;
+cursor: pointer;
+}
+
+@media (min-width: 912px) {
   .hero-container .hero .hero-left {
     align-items: flex-start;
     text-align: left;
@@ -232,4 +250,22 @@ justify-content: center;
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+@media (max-width: 280px){
+  .hero-container .hero .hero-left .hero-title {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .random-info-section .random-info-container  {
+    text-align: center;
+  }
+  .hero-container .hero {
+    gap: 1rem;
+  }
+  .hero-container .hero .hero-right {
+    text-align: center;
+    
+  }
+
 }
