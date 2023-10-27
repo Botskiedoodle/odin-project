@@ -71,25 +71,28 @@ const recordRound = (result, playerSelection, opponentSelection) => {
 
 
 const playRound = () => {
-  const roundOutcome = getComputerChoice() - playerSelection
+
+  let computer = getComputerChoice()
+  const roundOutcome = computer - playerSelection
   // predetermined outcomes
   // 2, -1 means the user wis
   // 1, -2 means the computer wins
   // 0 meants tie
+  console.table(computer, playerSelection, roundOutcome)
   if ([2, -1].includes(roundOutcome)) {
-    recordRound('win', selectionMap(playerSelection), selectionMap(getComputerChoice()))
+    recordRound('win', selectionMap(playerSelection), selectionMap(computer))
     userScore++
     userScoreElement.textContent = userScore
   }
 
   if ([1, -2].includes(roundOutcome)) {
-    recordRound('lost', selectionMap(playerSelection), selectionMap(getComputerChoice()))
+    recordRound('lost', selectionMap(playerSelection), selectionMap(computer))
     opponentScore++
     opponentScoreElement.textContent = opponentScore
   }
 
-  if (roundOutcome === 0) {
-    recordRound('tie', selectionMap(playerSelection), selectionMap(getComputerChoice()))
+  if ([0].includes(roundOutcome)) {
+    recordRound('tie', selectionMap(playerSelection), selectionMap(computer))
   }
   progressRound()
 
