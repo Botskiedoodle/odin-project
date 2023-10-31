@@ -7,19 +7,29 @@ const rainbowPen = () => {
 const canvasNode = document.querySelector('#canvas')
 let tool = rainbowPen()
 const generateCanvas = () => {
-  for (lengthCounter = 0; squaresPerSide > lengthCounter; lengthCounter++) {
-    const lengthNode = document.createElement('div')
-    lengthNode.style.display = 'flex'
-    for (widthCounter = 0; squaresPerSide > widthCounter; widthCounter++) {
-      const singleSquare = document.createElement('div')
-      singleSquare.style.width = 960 / squaresPerSide + 'px'
-      singleSquare.style.height = 960 / squaresPerSide + 'px'
+  for (let lengthCounter = 0; lengthCounter < squaresPerSide; lengthCounter++) {
+    const lengthNode = document.createElement('div');
+    lengthNode.style.display = 'flex';
+
+    for (let widthCounter = 0; widthCounter < squaresPerSide; widthCounter++) {
+      const singleSquare = document.createElement('div');
+      singleSquare.style.width = 960 / squaresPerSide + 'px';
+      singleSquare.style.height = 960 / squaresPerSide + 'px';
+      singleSquare.style.filter = `brightness(100%)`;
+
       singleSquare.addEventListener('mouseover', (e) => {
-        singleSquare.style.backgroundColor = rainbowPen()
-      })
-      lengthNode.appendChild(singleSquare)
+        singleSquare.style.backgroundColor = 'red';
+        let currentBrightness = parseFloat(singleSquare.style.filter.replace('brightness(', '').replace('%)', ''));
+        currentBrightness -= 10;
+        singleSquare.style.filter = `brightness(${currentBrightness}%)`;
+      });
+
+
+
+      lengthNode.appendChild(singleSquare);
     }
-    canvasNode.appendChild(lengthNode)
+
+    canvasNode.appendChild(lengthNode);
   }
 }
 
