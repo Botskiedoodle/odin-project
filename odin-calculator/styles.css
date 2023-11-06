@@ -74,11 +74,11 @@ body {
   color: white;
 }
 .dark-button:hover {
-  background-color: #405482; /* Change the background color on hover */
+  background-color: #405482; /
 }
 
 .dark-button:active {
-  background-color: #2B3B5C; /* Change the background color when pressed */
+  background-color: #2B3B5C; 
 }
 
 .red-button {
@@ -86,9 +86,20 @@ body {
   color: white;
 }
 .red-button:hover {
-  background-color: #A02E24; /* Change the background color on hover */
+  background-color: #A02E24; 
 }
 
 .red-button:active {
-  background-color: #731F18; /* Change the background color when pressed */
+  background-color: #731F18; 
+}
+
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.flicker {
+  animation: flicker 0.5s;
 }

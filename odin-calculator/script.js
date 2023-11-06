@@ -2,6 +2,11 @@
 // create a variable that store the first number entered
 // for every press, update the display
 
+// store the operator for later
+let operator
+let firstNum
+let secondNum
+
 const display = document.querySelector('.display')
 display.innerText = '0'
 
@@ -33,38 +38,53 @@ deleteButton.addEventListener('click', () => {
   }
 })
 
-// store the operator for later
-let operator
-let firstNum
-let secondNum
 
 const operandButton = document.querySelectorAll('.operand')
 operandButton.forEach(button => {
   button.addEventListener('click', (e) => {
+    display.classList.add('flicker');
+    setTimeout(() => {
+      display.classList.remove('flicker');
+    }, 500);
     firstNum = display.innerText
-    display.innerText = 0
     operator = e.target.innerText
+
+    display.innerText = 0
   })
 })
 
 
 const equalsButton = document.querySelector('.equals')
 equalsButton.addEventListener('click', () => {
+
   secondNum = display.innerText
+  display.classList.add('flicker');
+  setTimeout(() => {
+    display.classList.remove('flicker');
+  }, 500);
+
   if (operator === '+') {
-    display.innerText = Number(firstNum) + Number(secondNum)
+    firstNum = Number(firstNum) + Number(secondNum)
+    display.innerText = firstNum
+
   }
   if (operator === '-') {
-    display.innerText = Number(firstNum) - Number(secondNum)
+    firstNum = Number(firstNum) - Number(secondNum)
+    display.innerText = firstNum
+
   }
   if (operator === 'x') {
-    display.innerText = Number(firstNum) * Number(secondNum)
+    firstNum = Number(firstNum) * Number(secondNum)
+    display.innerText = firstNum
+
   }
   if (operator === '/') {
     if (secondNum == 0) {
       display.innerText = 'You cannot divide by zero.'
     } else {
-      display.innerText = Number(firstNum) / Number(secondNum)
+      firstNum = Number(firstNum) / Number(secondNum)
+      display.innerText = firstNum
+
     }
   }
 })
