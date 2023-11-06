@@ -1,0 +1,94 @@
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #3A4764;
+  display: flex;
+  justify-content: center;
+}
+
+.calculator-container {
+  
+  width: 30rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.screen {
+
+  background-color: #181F33;
+  height: 5rem;
+  justify-content: flex-end;
+  text-align: end;
+  align-items: center;
+  display: flex;
+  border-radius: .5rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+
+}
+
+.screen .display {
+  padding: 1rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons .buttons-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.button {
+  width: 8rem;
+  height: 4rem;
+  background-color: #E8E2DC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5em;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color .3s;
+}
+
+
+
+.button:hover {
+  cursor: pointer;
+  background-color: #C6B7A8;
+}
+.button:active {
+  background-color: #A49387; 
+}
+
+.dark-button {
+  background-color: #65729B;
+  color: white;
+}
+.dark-button:hover {
+  background-color: #405482; /* Change the background color on hover */
+}
+
+.dark-button:active {
+  background-color: #2B3B5C; /* Change the background color when pressed */
+}
+
+.red-button {
+  background-color: #D03F31;
+  color: white;
+}
+.red-button:hover {
+  background-color: #A02E24; /* Change the background color on hover */
+}
+
+.red-button:active {
+  background-color: #731F18; /* Change the background color when pressed */
+}
